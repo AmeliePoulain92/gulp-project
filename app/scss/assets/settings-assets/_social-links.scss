@@ -3,6 +3,11 @@ $socialLinks: (
     'twitter',
     'facebook'
 );
-@function socialLink($socialLink){
-    @return map-get($socialLinks, $socialLink);
+
+@each $socialLink in $socialLinks {
+	.list-item.#{$socialLink} {
+		.list-link {
+			background-image: url(../img/#{$socialLink}.svg);
+		}	
+	}
 }

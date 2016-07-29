@@ -1,16 +1,20 @@
 /*base*/
 
 @import 'assets/settings';
-
 .myContainer {
     max-width: containerGrid('container');
     margin: 0 auto;
-	position: relative;
-	font-size: 12px;
+    position: relative;
+    font-size: 12px;
+    @extend %clearfix;
 }
 
-.left-sidebar{
-	width: contentGrid('container', 'leftSidebar');
+.left-sidebar {
+    width: contentGrid('container', 'leftSidebar');
+    .right-col {
+        width: contentGrid('leftSidebar', 'rightCol');
+    }
 }
+
 
 /*END:base*/

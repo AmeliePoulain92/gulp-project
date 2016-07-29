@@ -1,6 +1,7 @@
 $grid: ( 
     'container': 960px, 
-    'leftSidebar': 520px
+    'leftSidebar': 520px,
+    'rightCol': 350px
 );
 
 @function containerGrid($width) {
@@ -8,6 +9,5 @@ $grid: (
 }
 
 @function contentGrid($container, $content) {
-    @return percentage(map-get($grid, $content) 
-    / map-get($grid, $container));
+    @return percentage(map-get($grid, $content) / map-get($grid, $container));
 }

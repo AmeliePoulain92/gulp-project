@@ -7,6 +7,7 @@ var csscomb = require('gulp-csscomb');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var prettify = require('gulp-jsbeautifier');
+var browserSync = require('browser-sync').create();
 var useref = require('gulp-useref');
 
 gulp.task('scss', function() {
@@ -22,6 +23,7 @@ gulp.task('scss', function() {
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('app/css'));
 });
+
 
 // gulp.task('useref', function(){
 // 	return gulp.src('app/*.html')
