@@ -1,0 +1,13 @@
+$grid: ( 
+    'container': 960px, 
+    'leftSidebar': 520px
+);
+
+@function containerGrid($width) {
+    @return map-get($grid, $width);
+}
+
+@function contentGrid($container, $content) {
+    @return percentage(map-get($grid, $content) 
+    / map-get($grid, $container));
+}

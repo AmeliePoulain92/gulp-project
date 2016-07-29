@@ -1,0 +1,11 @@
+%default-transition {
+    transition: all 0.15s ease-in;
+}
+
+%clearfix {
+    &:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+}

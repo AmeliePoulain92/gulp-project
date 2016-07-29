@@ -1,0 +1,8 @@
+$socialLinks: (
+    'vk',
+    'twitter',
+    'facebook'
+);
+@function socialLink($socialLink){
+    @return map-get($socialLinks, $socialLink);
+}
