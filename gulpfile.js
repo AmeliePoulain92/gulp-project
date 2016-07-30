@@ -69,13 +69,14 @@ gulp.task('watch', function() {
 	gulp.watch('app/scss/**/*.scss', ['scss']);
 	gulp.watch('app/template-modules/template-assets/*.html', ['template-assets']);
 	gulp.watch('app/**/*.html', ['html']);
-	// gulp.watch('app/js/**/*.js', ['default']);
+	// gulp.watch('app/js/**/*.js', ['js']);
 });
 
 gulp.task(
 	'default', 
 	[
 	'scss', 
+	// 'js',
 	'html', 
 	'useref', 
 	'browserSync', 
