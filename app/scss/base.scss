@@ -1,6 +1,10 @@
 /*base*/
 
 @import 'assets/settings';
+body {
+    color: green;
+}
+
 .myContainer {
     max-width: containerGrid('container');
     margin: 0 auto;
