@@ -4,10 +4,10 @@ $socialLinks: (
     'facebook'
 );
 
-@each $socialLink in $socialLinks {
-	.list-item.#{$socialLink} {
-		.list-link {
-			background-image: url(../img/#{$socialLink}.svg);
-		}	
-	}
-}
+// @each $socialLink in $socialLinks {
+// 	.list-item.#{$socialLink} {
+// 		.list-link {
+// 			background-image: url(../img/#{$socialLink}.svg);
+// 		}	
+// 	}
+// }

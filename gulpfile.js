@@ -4,12 +4,14 @@ var autoprefixer = require('gulp-autoprefixer');
 var gulpif = require('gulp-if');
 var minifyCSS = require('gulp-minify-css');
 var csscomb = require('gulp-csscomb');
+var  imageMin = require('gulp-imagemin');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var prettify = require('gulp-jsbeautifier');
 var rigger = require('gulp-rigger');
 var browserSync = require('browser-sync');
 var useref = require('gulp-useref');
+var psi = require('psi');
 
 gulp.task('scss', function() {
 	return gulp.src('app/scss/*.scss')
@@ -19,14 +21,34 @@ gulp.task('scss', function() {
 		browsers: ['last 5 versions', '>0%', 'ie 7'],
 		cascade: false
 	}))
-	.pipe(csscomb())
+	// .pipe(csscomb())
 	.pipe(prettify())
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('app/css'))
 });
 
-gulp.task('template-assets', function(){
-	return gulp.src('app/template-modules/template-assets/*.html')
+gulp.task('js', function(){
+	return gulp.src('app/js/js-modules/*.js')
+	.pipe(rigger())
+	.pipe(gulp.dest('app/js'))
+	.pipe(browserSync.reload({
+		stream: true
+	}));
+});
+
+gulp.task('img', function(){
+	return gulp.src('app/img/')
+	.pipe(imageMin())
+	.pipe(gulp.dest('dist/'));
+});
+
+gulp.task('fonts', function(){
+	gulp.src('app/fonts/')
+	.pipe(gulp.dest('dist/'));
+});
+
+gulp.task('html-browser-sync', function(){
+	return gulp.src('app/**/*.html')
 	.pipe(browserSync.reload({
 		stream: true
 	}));
@@ -37,19 +59,14 @@ gulp.task('html', function(){
 	.pipe(rigger())
 	.pipe(prettify())
 	.pipe(gulp.dest('app/'))
-	.pipe(browserSync.reload({
-		stream: true
-	}));
 });
 
-gulp.task('useref', function(){
+gulp.task('dist', function(){
 	return gulp.src('app/*.html')
 	.pipe(prettify())
 	.pipe(useref())
-	.pipe(gulpif('*.css', minifyCSS()))
-	.pipe(gulpif('*.js', uglify({
-		mangle: false
-	})))
+	.pipe(gulpif('*.css', prettify()))
+	.pipe(gulpif('*.js', prettify()))
 	.pipe(gulp.dest('dist/'));
 });
 
@@ -67,22 +84,27 @@ gulp.task('browserSync', function() {
 
 gulp.task('watch', function() {
 	gulp.watch('app/scss/**/*.scss', ['scss']);
-	gulp.watch('app/template-modules/template-assets/*.html', ['template-assets']);
-	gulp.watch('app/**/*.html', ['html']);
-	// gulp.watch('app/js/**/*.js', ['js']);
+	gulp.watch('app/**/*.html', ['html', 'html-browser-sync']);
+	gulp.watch('app/js/**/*.js', ['js']);
 });
 
 gulp.task(
 	'default', 
 	[
 	'scss', 
-	// 'js',
+	'img',
+	'js',
+	'fonts',
 	'html', 
-	'useref', 
+	'dist', 
 	'browserSync', 
 	'watch'
 	]
 	);
+
+
+
+
 
 
 

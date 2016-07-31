@@ -68,7 +68,7 @@
         "strip-spaces": true,
 
         // Whether to remove units in zero-valued dimensions.
-        "unitless-zero": true,
+        "unitless-zero": false,
 
         // Whether to align prefixes in properties and values.
         "vendor-prefix-align": false,

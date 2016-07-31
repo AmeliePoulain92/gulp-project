@@ -139,9 +139,7 @@ h6 {
     margin: 0 0 20px;
 }
 
-h1 {
-}
-
+h1 {}
 
 h1 {
     font-size: 2em;
@@ -172,11 +170,6 @@ a:hover,
 a:focus {
     outline: none;
     color: #000;
-}
-
-.decoration-none,
-.decoration-none a {
-    text-decoration: none;
 }
 
 ul {
@@ -210,15 +203,12 @@ textarea {
     overflow: auto;
 }
 
-button {
-    cursor: pointer;
-}
-
 strong {
     font-weight: bold;
 }
 
-label {
+label,
+button {
     cursor: pointer;
 }
 
@@ -245,11 +235,5 @@ input[type="search"]::-webkit-search-results-decoration {
 .text-center {
     text-align: center;
 }
-
-.list-style-none,
-.list-style-none ul {
-    list-style: none;
-}
-
 
 /* END:myReset */
