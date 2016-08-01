@@ -21,7 +21,7 @@ gulp.task('scss', function() {
 		browsers: ['last 5 versions', '>0%', 'ie 7'],
 		cascade: false
 	}))
-	// .pipe(csscomb())
+	.pipe(csscomb())
 	.pipe(prettify())
 	.pipe(sourcemaps.write())
 	.pipe(gulp.dest('app/css'))
