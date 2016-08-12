@@ -4,7 +4,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var gulpif = require('gulp-if');
 var minifyCSS = require('gulp-minify-css');
 var csscomb = require('gulp-csscomb');
-var  imageMin = require('gulp-imagemin');
+var imageMin = require('gulp-imagemin');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var prettify = require('gulp-jsbeautifier');
@@ -23,7 +23,9 @@ gulp.task('scss', function() {
 	}))
 	.pipe(csscomb())
 	.pipe(prettify())
-	.pipe(sourcemaps.write())
+	.pipe(sourcemaps.write(
+		'../scss/sourcemaps'
+	))
 	.pipe(gulp.dest('app/css'))
 });
 
