@@ -84,7 +84,7 @@ gulp.task('browserSync', function() {
 		open: true,
 		browser: 'default',
 		startPath: '/',
-		notify: false
+		notify: false,
 	})
 });
 

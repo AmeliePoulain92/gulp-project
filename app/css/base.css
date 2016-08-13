@@ -1,10 +1,10 @@
 /*base*/
 
 a {
-    -webkit-transition: all .3s ease-in;
-    -moz-transition: all .3s ease-in;
-    -o-transition: all .3s ease-in;
-    transition: all .3s ease-in;
+    -webkit-transition: all .15s ease-in;
+    -moz-transition: all .15s ease-in;
+    -o-transition: all .15s ease-in;
+    transition: all .15s ease-in;
 }
 
 .myContainer:after {
@@ -27,10 +27,6 @@ html {
     position: relative;
     max-width: 960px;
     margin: 0 auto;
-}
-
-body {
-    color: green;
 }
 
 
