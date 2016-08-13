@@ -11,10 +11,32 @@ a {
 }
 
 .myContainer {
-    max-width: containerGrid('container');
-    margin: 0 auto;
     position: relative;
+    max-width: gridValue('container');
+    margin: 0 auto;
+
     @extend %clearfix;
+}
+
+.row {
+    margin-right: -(gridValue('gutter'));
+    margin-left: -(gridValue('gutter'));
+
+    @extend %clearfix;
+}
+
+.leftBlock {
+    float: left;
+    width: contentGrid('container', 'leftBlock', 'gutter');
+    padding: 0 gridValue('gutter');
+    text-align: center;
+}
+
+.rightBlock {
+    float: left;
+    width: contentGrid('container', 'rightBlock', 'gutter');
+    padding: 0 gridValue('gutter');
+    text-align: center;
 }
 
 /*END:base*/

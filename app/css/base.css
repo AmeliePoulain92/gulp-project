@@ -7,7 +7,8 @@ a {
     transition: all .15s ease-in;
 }
 
-.myContainer:after {
+.myContainer:after,
+.row:after {
     display: block;
     clear: both;
     content: '';
@@ -25,8 +26,27 @@ html {
 
 .myContainer {
     position: relative;
-    max-width: 960px;
+    max-width: 1170px;
     margin: 0 auto;
+}
+
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.leftBlock {
+    float: left;
+    width: 30.83333%;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.rightBlock {
+    float: left;
+    width: 30.83333%;
+    padding: 0 15px;
+    text-align: center;
 }
 
 

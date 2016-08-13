@@ -1,11 +1,14 @@
 $grid: ( 
-    'container': 960px, 
+    'container': 1170px,
+    'leftBlock': 370px,
+    'rightBlock': 370px,
+    'gutter': 15px
 );
 
-@function containerGrid($width) {
+@function gridValue($width) {
     @return map-get($grid, $width);
 }
 
-@function contentGrid($container, $content) {
-    @return percentage(map-get($grid, $content) / map-get($grid, $container));
+@function contentGrid($container, $content, $gutter) {
+    @return percentage((map-get($grid, $content) + map-get($grid, $gutter) * 2))) / ((map-get($grid, $container) + map-get($grid, $gutter) * 2)));
 }
