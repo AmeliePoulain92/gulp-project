@@ -68,6 +68,10 @@ gulp.task('dist', function(){
 	.pipe(useref())
 	.pipe(gulpif('*.css', prettify()))
 	.pipe(gulpif('*.js', prettify()))
+	// .pipe(gulpif('*.css', minifyCSS()))
+	// .pipe(gulpif('*.js', uglify({
+	// 	mangle: false
+	// })))
 	.pipe(gulp.dest('dist/'));
 });
 
@@ -76,10 +80,11 @@ gulp.task('browserSync', function() {
 		server: {
 			baseDir: './app'
 		},
-		port: 3004,
+		port: 3000,
 		open: true,
 		browser: 'default',
-		startPath: '/'
+		startPath: '/',
+		notify: false
 	})
 });
 
