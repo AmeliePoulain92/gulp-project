@@ -23,6 +23,7 @@
     "gulp-imagemin": "^3.0.2",
     "gulp-jsbeautifier": "^2.0.3",
     "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^2.2.0",
     "gulp-rigger": "^0.5.8",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",

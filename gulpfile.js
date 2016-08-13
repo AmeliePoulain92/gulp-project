@@ -38,7 +38,7 @@ gulp.task('js', function(){
 });
 
 gulp.task('img', function(){
-	return gulp.src('app/img/')
+	gulp.src('app/img/')
 	.pipe(imageMin())
 	.pipe(gulp.dest('dist/'));
 });
@@ -98,10 +98,11 @@ gulp.task(
 	'default', 
 	[
 	'scss', 
+	'html-browser-sync',
 	'img',
 	'js',
 	'fonts',
-	'html', 
+	'html',
 	'dist', 
 	'browserSync', 
 	'watch'
