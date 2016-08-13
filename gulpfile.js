@@ -11,7 +11,6 @@ var prettify = require('gulp-jsbeautifier');
 var rigger = require('gulp-rigger');
 var browserSync = require('browser-sync');
 var useref = require('gulp-useref');
-var psi = require('psi');
 
 gulp.task('scss', function() {
 	return gulp.src('app/scss/*.scss')
