@@ -2,20 +2,28 @@
     transition: all 0.15s ease-in;
 }
 
+%list-style-none {
+    list-style: none;
+}
+
+%img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
 %clearfix {
     &:after {
         display: block;
-        content: '';
         clear: both;
+        content: '';
     }
 }
 
 %grayscale {
-    filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%…200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale");
+    filter: url('data:image/svg+xml;utf8,<svg%20xmlns=\'http://www.w3.org/2000/svg\'><filter%…200.3333%200.3333%200%200%200%200%200%201%200\'/></filter></svg>#grayscale');
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
 }
-
-
