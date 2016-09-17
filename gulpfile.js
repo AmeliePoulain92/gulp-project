@@ -7,6 +7,7 @@ var csscomb = require('gulp-csscomb');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var prettify = require('gulp-jsbeautifier');
+var clean = require('gulp-clean');
 var rigger = require('gulp-rigger');
 var browserSync = require('browser-sync');
 var bsReload = browserSync.reload;
@@ -66,7 +67,7 @@ gulp.task('bower', function () {
           }
       }))
       .pipe(gulp.dest('app/template-modules/template-assets/'))
-      .pipe(reload({stream:true}));
+      .pipe(bsReload({stream:true}));
   });
 // ===========:END:bower:app ================
 
@@ -75,6 +76,13 @@ gulp.task('bower', function () {
 
 
 // ======== DIST ==========================================================================================================
+
+// =========== clean:dist ================
+gulp.task('clean:dist', function(){
+	return gulp.src('dist/')
+	.pipe(clean());
+});
+// =========== END:clean:dist ================
 
 // =========== html:dist ================
 gulp.task('html:dist', function(){
@@ -166,7 +174,7 @@ gulp.task('watch', function() {
 // ======== default ===================
 gulp.task(
 	'default', 
-	['html:app', 'scss:app', 'watch'], 
+	['html:app', 'scss:app', 'clean:dist', 'watch'], 
 	function(){
 		gulp.start('browserSync');
 	}

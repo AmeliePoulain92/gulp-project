@@ -1,7 +1,5 @@
 {
   "name": "gulp-project",
   "version": "1.0.0",
-  "dependencies": {
-    "jquery-form-styler": "jquery.form-styler#^1.7.6"
-  }
+  "dependencies": {}
 }
