@@ -25,7 +25,7 @@ gulp.task('scss', function() {
 	.pipe(sourcemaps.write(
 		'../scss/sourcemaps'
 	))
-	.pipe(gulp.dest('app/css'))
+	.pipe(gulp.dest('app/css'));
 });
 
 gulp.task('js', function(){
@@ -59,7 +59,7 @@ gulp.task('html', function(){
 	return gulp.src('app/template-modules/*.html')
 	.pipe(rigger())
 	.pipe(prettify())
-	.pipe(gulp.dest('app/'))
+	.pipe(gulp.dest('app/'));
 });
 
 gulp.task('dist', function(){
@@ -85,7 +85,7 @@ gulp.task('browserSync', function() {
 		browser: 'default',
 		startPath: '/',
 		notify: false,
-	})
+	});
 });
 
 gulp.task('watch', function() {
