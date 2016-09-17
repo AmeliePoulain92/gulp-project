@@ -11,6 +11,7 @@ var rigger = require('gulp-rigger');
 var browserSync = require('browser-sync');
 var bsReload = browserSync.reload;
 var useref = require('gulp-useref');
+var wiredep = require('wiredep').stream;
 
 
 // ======== APP ==========================================================================================================
@@ -51,6 +52,23 @@ gulp.task('js:app', function(){
 	.pipe(bsReload({stream:true}));
 });
 // =========== END:js:app ================
+
+// ===========:bower:app ================
+gulp.task('bower', function () {
+    gulp.src('app/template-modules/template-assets/**/*.html')
+      .pipe(wiredep({
+        'ignorePath': '../',
+        directory : "app/bower_components",
+        packages:
+          {
+            js: [ 'bower_components/' ],
+            css: [ 'bower_components/' ]
+          }
+      }))
+      .pipe(gulp.dest('app/template-modules/template-assets/'))
+      .pipe(reload({stream:true}));
+  });
+// ===========:END:bower:app ================
 
 // ======== END:APP ==========================================================================================================
 
@@ -141,6 +159,7 @@ gulp.task('watch', function() {
 	gulp.watch('app/scss/**/*.scss', ['scss:app']);
 	gulp.watch(['app/template-modules/**/*.html'],['html:app']);
 	gulp.watch('app/js/**/*.js', ['js:app']);
+	gulp.watch(['bower.json'],['bower']);
 });
 // ======== END:watch ===================
 
