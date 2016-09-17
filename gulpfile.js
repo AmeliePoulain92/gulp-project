@@ -13,6 +13,7 @@ var browserSync = require('browser-sync');
 var bsReload = browserSync.reload;
 var useref = require('gulp-useref');
 var wiredep = require('wiredep').stream;
+var psi = require('psi');
 
 
 // ======== APP ==========================================================================================================
@@ -161,6 +162,26 @@ gulp.task('browserSync', function() {
 	});
 });
 // ======== END:browserSync ===================
+
+
+// ======== psi ===============================
+// get the PageSpeed Insights report
+psi('theverge.com').then(data => {
+  console.log(data.ruleGroups.SPEED.score);
+  console.log(data.pageStats);
+});
+
+// output a formatted report to the terminal
+psi.output('theverge.com').then(() => {
+  console.log('done');
+});
+
+// Supply options to PSI and get back speed and usability scores
+psi('theverge.com', {nokey: 'true', strategy: 'mobile'}).then(data => {
+  console.log('Speed score: ' + data.ruleGroups.SPEED.score);
+  console.log('Usability score: ' + data.ruleGroups.USABILITY.score);
+});
+// ======== END:psi ===============================
 
 // ======== watch ===================
 gulp.task('watch', function() {
