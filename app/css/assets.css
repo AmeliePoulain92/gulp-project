@@ -185,8 +185,20 @@ img {
     outline: none;
 }
 
-input {
-    -webkit-appearance: none;
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+    display: none;
+}
+
+input::-moz-focus-inner,
+button::-moz-focus-inner {
+    border: 0;
+}
+
+input::-ms-clear {
+    display: none;
 }
 
 input,
@@ -213,13 +225,6 @@ button {
 table {
     border-spacing: 0;
     border-collapse: collapse;
-}
-
-input[type='search']::-webkit-search-decoration,
-input[type='search']::-webkit-search-cancel-button,
-input[type='search']::-webkit-search-results-button,
-input[type='search']::-webkit-search-results-decoration {
-    display: none;
 }
 
 .alignright {
