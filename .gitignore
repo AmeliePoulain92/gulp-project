@@ -2,6 +2,7 @@ node_modules/
 app/css/
 app/*.html
 dist/
+*.css.map
 *.log
 *.cache
 *.orig
