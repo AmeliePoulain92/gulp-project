@@ -1,0 +1,36 @@
+/*animations*/
+/*spinner*/
+@-webkit-keyframes spinner {
+  from {
+    transform:rotate(0)
+  }
+  to {
+    transform:rotate(360deg)
+  }
+}
+@-moz-keyframes spinner {
+  from {
+    transform:rotate(0)
+  }
+  to {
+    transform:rotate(360deg)
+  }
+}
+@-o-keyframes spinner {
+  from {
+    transform:rotate(0)
+  }
+  to {
+    transform:rotate(360deg)
+  }
+}
+@keyframes spinner {
+  from {
+    transform:rotate(0)
+  }
+  to {
+    transform:rotate(360deg)
+  }
+}
+/*END:spinner*/
+/*END:animations*/
