@@ -134,7 +134,7 @@ gulp.task(
 	[
 		'scss:app', 
 		'js:app',
-		'html',
+		'html:app',
 		'watch',
 		'browserSync', 
 	]
