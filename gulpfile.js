@@ -9,10 +9,21 @@ var uglify = require('gulp-uglify');
 var prettify = require('gulp-jsbeautifier');
 var rigger = require('gulp-rigger');
 var browserSync = require('browser-sync');
+var bsReload = browserSync.reload;
 var useref = require('gulp-useref');
 
 
 // ======== APP ==========================================================================================================
+
+// =========== html:app ================
+gulp.task('html:app', function(){
+	return gulp.src('app/template-modules/*.html')
+	.pipe(rigger())
+	.pipe(prettify())
+	.pipe(gulp.dest('app/'))
+	.pipe(bsReload({stream:true}));
+});
+// =========== END:html:app ================
 
 // =========== scss:app ================
 gulp.task('scss:app', function() {
@@ -37,25 +48,11 @@ gulp.task('js:app', function(){
 	return gulp.src('app/js/js-modules/*.js')
 	.pipe(rigger())
 	.pipe(gulp.dest('app/js'))
-	.pipe(browserSync.reload({
-		stream: true
-	}));
+	.pipe(bsReload({stream:true}));
 });
 // =========== END:js:app ================
 
-
-// =========== html:app ================
-gulp.task('html:app', function(){
-	return gulp.src('app/template-modules/*.html')
-	.pipe(rigger())
-	.pipe(prettify())
-	.pipe(gulp.dest('app/'));
-});
-// =========== END:html:app ================
-
 // ======== END:APP ==========================================================================================================
-
-
 
 
 
@@ -125,19 +122,17 @@ gulp.task('browserSync', function() {
 
 gulp.task('watch', function() {
 	gulp.watch('app/scss/**/*.scss', ['scss:app']);
-	gulp.watch("app/*.html").on('change', browserSync.reload);
+	gulp.watch("app/template-modules/**/*.html").on('change', browserSync.reload);
+	gulp.watch(['app/template-modules/*.html'],['rigger']);
 	gulp.watch('app/js/**/*.js', ['js:app']);
 });
 
 gulp.task(
 	'default', 
-	[
-		'scss:app', 
-		'js:app',
-		'html:app',
-		'watch',
-		'browserSync', 
-	]
+	['html:app', 'scss:app', 'watch'], 
+	function(){
+		gulp.start('browserSync');
+	}
 );
 
 
