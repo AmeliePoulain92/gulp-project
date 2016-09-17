@@ -76,7 +76,8 @@ gulp.task('css:dist', function(){
 
 gulp.task('cssMinify:dist', function(){
 	return gulp.src('dist/css/**/*.css')
-	.pipe(minifyCSS());
+	.pipe(minifyCSS())
+	.pipe(gulp.dest('dist/css'));
 });
 // =========== END:css:dist ================
 
@@ -91,7 +92,8 @@ gulp.task('jsUglify:dist', function(){
 	return gulp.src('dist/js/**/*.js')
 	.pipe(uglify({
 		mangle: false
-	}));
+	}))
+	.pipe(gulp.dest('dist/js'));
 });
 // =========== END:js:dist ================
 
