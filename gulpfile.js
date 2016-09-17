@@ -4,7 +4,6 @@ var autoprefixer = require('gulp-autoprefixer');
 var gulpif = require('gulp-if');
 var minifyCSS = require('gulp-minify-css');
 var csscomb = require('gulp-csscomb');
-var imageMin = require('gulp-imagemin');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var prettify = require('gulp-jsbeautifier');
@@ -39,7 +38,6 @@ gulp.task('js', function(){
 
 gulp.task('img', function(){
 	gulp.src('app/img/')
-	.pipe(imageMin())
 	.pipe(gulp.dest('dist/'));
 });
 
@@ -97,17 +95,17 @@ gulp.task('watch', function() {
 gulp.task(
 	'default', 
 	[
-	'scss', 
-	'html-browser-sync',
-	'img',
-	'js',
-	'fonts',
-	'html',
-	'dist', 
-	'browserSync', 
-	'watch'
+		'scss', 
+		'html-browser-sync',
+		'img',
+		'js',
+		'fonts',
+		'html',
+		'dist', 
+		'browserSync', 
+		'watch'
 	]
-	);
+);
 
 
 
