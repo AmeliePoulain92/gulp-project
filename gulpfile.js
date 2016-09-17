@@ -14,6 +14,7 @@ var bsReload = browserSync.reload;
 var useref = require('gulp-useref');
 var wiredep = require('wiredep').stream;
 var psi = require('psi');
+var sftp = require('gulp-sftp');
 
 
 // ======== APP ==========================================================================================================
@@ -140,6 +141,7 @@ gulp.task('fonts:dist', function(){
 
 // =========== DIST ============================================================================
 gulp.task('dist', function(){
+	gulp.start('clean:dist');
 	gulp.start('html:dist');
 	gulp.start('css:dist');
 	gulp.start('js:dist');
@@ -162,6 +164,22 @@ gulp.task('browserSync', function() {
 	});
 });
 // ======== END:browserSync ===================
+
+
+// ======== sftp ===================
+gulp.task('sftp', function () {
+   return gulp.src('dist/')
+   .pipe(sftp({
+      host: 'mashina.ftp.ukraine.com.ua',
+      user: 'mashina_artururian',
+      pass: '3ck61o4j',
+      port: 21,
+      remotePath: 'apple/gulp-test/'
+   }));
+});
+// ======== END:sftp ===================
+
+
 
 
 // ======== psi ===============================
