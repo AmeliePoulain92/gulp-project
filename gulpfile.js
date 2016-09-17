@@ -109,6 +109,7 @@ gulp.task('dist', function(){
 });
 // =========== END:DIST ============================================================================
 
+// ======== browserSync ===================
 gulp.task('browserSync', function() {
 	browserSync({
 		server: {
@@ -121,14 +122,17 @@ gulp.task('browserSync', function() {
 		notify: false,
 	});
 });
+// ======== END:browserSync ===================
 
+// ======== watch ===================
 gulp.task('watch', function() {
 	gulp.watch('app/scss/**/*.scss', ['scss:app']);
-	gulp.watch("app/template-modules/**/*.html").on('change', browserSync.reload);
-	// gulp.watch(['app/template-modules/*.html'],['rigger']);
+	gulp.watch(['app/template-modules/**/*.html'],['html:app']);
 	gulp.watch('app/js/**/*.js', ['js:app']);
 });
+// ======== END:watch ===================
 
+// ======== default ===================
 gulp.task(
 	'default', 
 	['html:app', 'scss:app', 'watch'], 
@@ -136,7 +140,7 @@ gulp.task(
 		gulp.start('browserSync');
 	}
 );
-
+// ======== default ===================
 
 
 

@@ -1,3 +1,3 @@
 // form
-var form = $('#contactForm');
+var form;
 // END:form

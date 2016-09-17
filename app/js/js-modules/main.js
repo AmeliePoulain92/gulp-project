@@ -1,5 +1,3 @@
 //= js-assets/variables
+//= contact/form
 
-$(document).ready(function() {
-	//= contact/form
-});

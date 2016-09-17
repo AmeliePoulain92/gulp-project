@@ -1,7 +1,4 @@
 var variables;
-
-$(document).ready(function() {
-	// form
-	var form = $('#contactForm');
-	// END:form
-});
+// form
+var form;
+// END:form

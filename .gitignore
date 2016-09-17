@@ -1,5 +1,5 @@
 node_modules/
-app/css/*.css
+app/css/
 app/*.html
 dist/
 *.log
