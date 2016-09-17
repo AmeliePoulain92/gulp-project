@@ -73,15 +73,14 @@ a {
 
 /*END:header*/
 
+
+/*footer*/
+
+
+/*END:footer*/
+
 html {
     height: 100%;
-}
-
-a {
-    -webkit-animation: spinner;
-    -moz-animation: spinner;
-    -o-animation: spinner;
-    animation: spinner;
 }
 
 

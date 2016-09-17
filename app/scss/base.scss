@@ -2,6 +2,7 @@
 
 @import 'assets/settings';
 @import 'assets/base-assets/header';
+@import 'assets/base-assets/footer';
 html {
     height: 100%;
 }
@@ -10,8 +11,5 @@ a {
     @extend %default-transition;
 }
 
-a{
-    animation: spinner;
-}
 
 /*END:base*/
