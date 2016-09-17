@@ -21,9 +21,7 @@ gulp.task('html:app', function(){
 	.pipe(rigger())
 	.pipe(prettify())
 	.pipe(gulp.dest('app/'))
-	.pipe(browserSync.reload({
-		stream: true
-	}));
+	.pipe(bsReload({stream:true}));
 });
 // =========== END:html:app ================
 
@@ -87,15 +85,15 @@ gulp.task('js:dist', function(){
 
 // =========== img:dist ================
 gulp.task('img:dist', function(){
-	gulp.src('app/img/')
-	.pipe(gulp.dest('dist/'));
+	gulp.src('app/img/**/*')
+	.pipe(gulp.dest('dist/img/'));
 });
 // =========== END:img:dist ================
 
 // =========== fonts:dist ================
 gulp.task('fonts:dist', function(){
-	gulp.src('app/fonts/')
-	.pipe(gulp.dest('dist/'));
+	gulp.src('app/fonts/**/*')
+	.pipe(gulp.dest('dist/fonts/'));
 });
 // =========== END:fonts:dist ================
 
