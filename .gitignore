@@ -1,6 +1,6 @@
 node_modules/
 app/css
-app/.html
+app/*.html
 dist/
 *.log
 *.cache
