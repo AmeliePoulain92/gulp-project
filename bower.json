@@ -2,6 +2,7 @@
   "name": "gulp-project",
   "version": "1.0.0",
   "dependencies": {
-    "jquery": "2.2.4"
+    "jquery": "2.2.4",
+    "slick-carousel": "^1.6.0"
   }
 }
