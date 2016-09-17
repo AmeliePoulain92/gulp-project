@@ -21,7 +21,9 @@ gulp.task('html:app', function(){
 	.pipe(rigger())
 	.pipe(prettify())
 	.pipe(gulp.dest('app/'))
-	.pipe(bsReload({stream:true}));
+	.pipe(browserSync.reload({
+		stream: true
+	}));
 });
 // =========== END:html:app ================
 
@@ -123,7 +125,7 @@ gulp.task('browserSync', function() {
 gulp.task('watch', function() {
 	gulp.watch('app/scss/**/*.scss', ['scss:app']);
 	gulp.watch("app/template-modules/**/*.html").on('change', browserSync.reload);
-	gulp.watch(['app/template-modules/*.html'],['rigger']);
+	// gulp.watch(['app/template-modules/*.html'],['rigger']);
 	gulp.watch('app/js/**/*.js', ['js:app']);
 });
 
