@@ -1,17 +1,70 @@
 /*base*/
 
+
+/*animations*/
+
+
+/*spinner*/
+
+@-webkit-keyframes spinner {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spinner {
+    from {
+        -moz-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes spinner {
+    from {
+        -o-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinner {
+    from {
+        -webkit-transform: rotate(0);
+        -moz-transform: rotate(0);
+        -o-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+/*END:spinner*/
+
+
+/*END:animations*/
+
 a {
     -webkit-transition: all .15s ease-in;
     -moz-transition: all .15s ease-in;
     -o-transition: all .15s ease-in;
     transition: all .15s ease-in;
-}
-
-.myContainer:after,
-.row:after {
-    display: block;
-    clear: both;
-    content: '';
 }
 
 
@@ -24,29 +77,11 @@ html {
     height: 100%;
 }
 
-.myContainer {
-    position: relative;
-    max-width: 1170px;
-    margin: 0 auto;
-}
-
-.row {
-    margin-right: -15px;
-    margin-left: -15px;
-}
-
-.leftBlock {
-    float: left;
-    width: 66.66667%;
-    padding: 0 15px;
-    text-align: center;
-}
-
-.rightBlock {
-    float: left;
-    width: 33.33333%;
-    padding: 0 15px;
-    text-align: center;
+a {
+    -webkit-animation: spinner;
+    -moz-animation: spinner;
+    -o-animation: spinner;
+    animation: spinner;
 }
 
 
