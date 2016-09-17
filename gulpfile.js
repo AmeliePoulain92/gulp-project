@@ -73,6 +73,11 @@ gulp.task('css:dist', function(){
 	.pipe(prettify())
 	.pipe(gulp.dest('dist/css'));
 });
+
+gulp.task('cssMinify:dist', function(){
+	return gulp.src('dist/css/**/*.css')
+	.pipe(minifyCSS());
+});
 // =========== END:css:dist ================
 
 // =========== js:dist ================
@@ -80,6 +85,13 @@ gulp.task('js:dist', function(){
 	return gulp.src('app/*.js')
 	.pipe(prettify())
 	.pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('jsUglify:dist', function(){
+	return gulp.src('dist/js/**/*.js')
+	.pipe(uglify({
+		mangle: false
+	}));
 });
 // =========== END:js:dist ================
 
