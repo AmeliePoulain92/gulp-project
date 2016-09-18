@@ -174,12 +174,10 @@ gulp.task('sftp', function () {
       user: 'mashina_artururian',
       pass: '3ck61o4j',
       port: 21,
-      remotePath: 'apple/gulp-test/'
+      remotePath: '/apple/gulp-test/'
    }));
 });
 // ======== END:sftp ===================
-
-
 
 
 // ======== psi ===============================
