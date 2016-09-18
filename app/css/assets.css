@@ -246,11 +246,9 @@ table {
 /*fonts*/
 
 @font-face {
-    font-family: 'OpenSans-Regular';
-    src: url('../fonts/OpenSans/OpenSans-Regular/OpenSans-Regular.eot');
-    /* IE9 Compat Modes */
-    src: url('../fonts/OpenSans/OpenSans-Regular/OpenSans-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans/OpenSans-Regular/OpenSans-Regular.woff') format('woff'), url('../fonts/OpenSans/OpenSans-Regular/OpenSans-Regular.ttf') format('truetype'), url('../fonts/OpenSans/OpenSans-Regular/OpenSans-Regular.svg#svgFontName') format('svg');
-    /* Legacy iOS */
+    font-family: 'LifehackBasic-Regular';
+    src: url('../fonts/LifehackBasic/LifehackBasic-Regular/LifehackBasic-Regular.eot');
+    src: url('../fonts/LifehackBasic/LifehackBasic-Regular/LifehackBasic-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/LifehackBasic/LifehackBasic-Regular/LifehackBasic-Regular.woff') format('woff'), url('../fonts/LifehackBasic/LifehackBasic-Regular/LifehackBasic-Regular.ttf') format('truetype'), url('../fonts/LifehackBasic/LifehackBasic-Regular/LifehackBasic-Regular.svg#LifehackBasic') format('svg');
 }
 
 

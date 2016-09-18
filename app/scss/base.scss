@@ -3,6 +3,7 @@
 @import 'assets/settings';
 @import 'assets/base-assets/header';
 @import 'assets/base-assets/footer';
+
 html {
     height: 100%;
 }
@@ -11,10 +12,15 @@ a {
     @extend %default-transition;
 }
 
-a {
-   display: block;
-   color: #6e4646;
+
+body {
+    display: block;
+    font-family: 'LifehackBasic-Regular';
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 
 /*END:base*/
+
+

@@ -23,9 +23,11 @@ html {
     height: 100%;
 }
 
-a {
+body {
+    font-family: 'LifehackBasic-Regular';
     display: block;
-    color: #6e4646;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 
