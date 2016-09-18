@@ -1,5 +1,7 @@
 {
   "name": "gulp-project",
   "version": "1.0.0",
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "2.2.4"
+  }
 }

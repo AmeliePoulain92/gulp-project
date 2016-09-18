@@ -182,7 +182,7 @@ gulp.task('sftp', function () {
 
 // ======== psi ===============================
 // get the PageSpeed Insights report
-psi('theverge.com').then(data => {
+/*psi('theverge.com').then(data => {
   console.log(data.ruleGroups.SPEED.score);
   console.log(data.pageStats);
 });
@@ -196,7 +196,7 @@ psi.output('theverge.com').then(() => {
 psi('theverge.com', {nokey: 'true', strategy: 'mobile'}).then(data => {
   console.log('Speed score: ' + data.ruleGroups.SPEED.score);
   console.log('Usability score: ' + data.ruleGroups.USABILITY.score);
-});
+});*/
 // ======== END:psi ===============================
 
 // ======== watch ===================
