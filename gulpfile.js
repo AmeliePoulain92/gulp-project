@@ -12,6 +12,7 @@ var rigger = require('gulp-rigger');
 var browserSync = require('browser-sync');
 var bsReload = browserSync.reload;
 var useref = require('gulp-useref');
+var svgSprite = require("gulp-svg-sprites");
 var wiredep = require('wiredep').stream;
 var psi = require('psi');
 var sftp = require('gulp-sftp');
@@ -55,6 +56,16 @@ gulp.task('js:app', function(){
 	.pipe(bsReload({stream:true}));
 });
 // =========== END:js:app ================
+
+// =========== img-svg:app ================
+gulp.task('img-svg:app', function(){
+	gulp.src('app/img/**/*.svg')
+	.pipe(svgSprite({
+		preview: false,
+	}))
+	.pipe(gulp.dest('app/css/svg/'));
+});
+// =========== END:img-svg:app ================
 
 // ===========:bower:app ================
 gulp.task('bower', function () {
