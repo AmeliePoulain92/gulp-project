@@ -79,10 +79,10 @@ body {
 }
 
 .icon-lady {
-    width: 1024px;
-    height: 1280px;
+    width: 425px;
+    height: 640px;
     background-image: url(../img/sprite.png);
-    background-position: 0 0;
+    background-position: -1824px 0;
 }
 
 

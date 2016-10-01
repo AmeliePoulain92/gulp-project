@@ -60,11 +60,23 @@ gulp.task('js:app', function(){
 
 // =========== sprite-svg:app ================
 gulp.task('sprite-svg:app', function(){
-	gulp.src('app/img/**/*.svg')
+	gulp.src('./app/img/**/*.svg')
 	.pipe(svgSprite({
-		preview: false,
+		mode: {
+    		css: {
+    		    dest: "./img/",
+    		    layout: "diagonal",
+    		    sprite: './img/sprite.svg',
+    		    bust: false,
+    		    render: {
+    		        scss: {
+    		            dest: "scss/_sprite-svg.scss",
+    		        }
+    		    }
+    		}
+		},
 	}))
-	.pipe(gulp.dest('app/css/svg/'));
+	.pipe(gulp.dest('./app/img'));
 });
 // =========== END:sprite-svg:app ================
 
@@ -100,8 +112,6 @@ gulp.task('bower', function () {
 // ===========:END:bower:app ================
 
 // ======== END:APP ==========================================================================================================
-
-
 
 // ======== DIST ==========================================================================================================
 
