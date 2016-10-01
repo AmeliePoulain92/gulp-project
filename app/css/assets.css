@@ -314,4 +314,36 @@ The `sprites` mixin generates identical output to the CSS template
 
 @include sprites($spritesheet-sprites);
 */
+
+.icon {
+    font-size: 10px;
+}
+
+.icon:before {
+    display: inline-block;
+    content: ' ';
+    vertical-align: middle;
+    background-image: url('../img/sprite.svg');
+    background-repeat: no-repeat;
+    -webkit-background-size: 50.4222em 62.2em;
+    -moz-background-size: 50.4222em 62.2em;
+    -o-background-size: 50.4222em 62.2em;
+    background-size: 50.4222em 62.2em;
+}
+
+.no-svg .icon:before {
+    background-image: url('../sprite.png');
+}
+
+.icon.heart:before {
+    width: 50.4222em;
+    height: 50.4222em;
+    background-position: 0 0;
+}
+
+.icon.tiger:before {
+    width: 11.6667em;
+    height: 11.6667em;
+    background-position: 0 -50.5em;
+}
 /*# sourceMappingURL=sourcemaps/assets.css.map */
