@@ -62,19 +62,17 @@ gulp.task('js:app', function(){
 gulp.task('sprite-svg:app', function(){
 	gulp.src('./app/img/**/*.svg')
 	.pipe(svgSprite({
-		mode: {
-    		css: {
-    		    dest: "./",
-    		    layout: "diagonal",
-    		    sprite: './img/sprite.svg',
-    		    bust: false,
-    		    render: {
-    		        scss: {
-    		            dest: "scss/_sprite-svg.scss",
-    		        }
-    		    }
-    		}
+		svg: {
+    	    sprite: './app/img/sprite.svg',
 		},
+    	css: {
+    	    dest: "./app/scss/assets/_sprite-svg.scss",
+    	    render: {
+    	        scss: {
+    	            dest: "./app/scss/assets/_sprite-svg.scss",
+    	        }
+    	    }
+    	}
 	}))
 	.pipe(gulp.dest('./app/img'));
 });
