@@ -13,6 +13,7 @@ var browserSync = require('browser-sync');
 var bsReload = browserSync.reload;
 var useref = require('gulp-useref');
 var svgSprite = require("gulp-svg-sprites");
+var spritesmith = require('gulp.spritesmith');
 var wiredep = require('wiredep').stream;
 var psi = require('psi');
 var sftp = require('gulp-sftp');
@@ -57,15 +58,29 @@ gulp.task('js:app', function(){
 });
 // =========== END:js:app ================
 
-// =========== img-svg:app ================
-gulp.task('img-svg:app', function(){
+// =========== sprite-svg:app ================
+gulp.task('sprite-svg:app', function(){
 	gulp.src('app/img/**/*.svg')
 	.pipe(svgSprite({
 		preview: false,
 	}))
 	.pipe(gulp.dest('app/css/svg/'));
 });
-// =========== END:img-svg:app ================
+// =========== END:sprite-svg:app ================
+
+// =========== sprite-png:app ================
+gulp.task('sprite-png:app', function(){
+	var spriteData = 
+    gulp.src('./app/img/sprite-png/**/*.png') 
+      .pipe(spritesmith({
+        imgName: 'sprite.png',
+        cssName: '_sprite-png.scss',
+        imgPath: '../img/sprite.png'
+      }));
+  	spriteData.img.pipe(gulp.dest('./app/img/')); 
+  	spriteData.css.pipe(gulp.dest('./app/scss/assets/')); 
+});
+// =========== END:sprite-png:app ================
 
 // ===========:bower:app ================
 gulp.task('bower', function () {
