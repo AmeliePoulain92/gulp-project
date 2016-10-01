@@ -91,7 +91,7 @@ gulp.task('sprite-png:app', function(){
 // =========== END:sprite-png:app ================
 
 // ===========:bower:app ================
-gulp.task('bower', function () {
+gulp.task('bower:app', function () {
     gulp.src('app/template-modules/template-assets/**/*.html')
       .pipe(wiredep({
         'ignorePath': '../',
@@ -171,6 +171,13 @@ gulp.task('fonts:dist', function(){
 });
 // =========== END:fonts:dist ================
 
+// =========== bower:dist ================
+gulp.task('bower:dist', function(){
+	gulp.src('app/bower_components/**/*')
+	.pipe(gulp.dest('dist/bower_components/'));
+});
+// =========== END:bower:dist ================
+
 // =========== DIST ============================================================================
 gulp.task('dist', function(){
 	gulp.start('clean:dist');
@@ -179,6 +186,7 @@ gulp.task('dist', function(){
 	gulp.start('js:dist');
 	gulp.start('img:dist');
 	gulp.start('fonts:dist');
+	gulp.start('bower:dist');
 });
 // =========== END:DIST ============================================================================
 
@@ -236,7 +244,7 @@ gulp.task('watch', function() {
 	gulp.watch('app/scss/**/*.scss', ['scss:app']);
 	gulp.watch(['app/template-modules/**/*.html'],['html:app']);
 	gulp.watch('app/js/**/*.js', ['js:app']);
-	gulp.watch(['bower.json'],['bower']);
+	gulp.watch(['bower.json'],['bower:app']);
 });
 // ======== END:watch ===================
 
