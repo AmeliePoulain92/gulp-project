@@ -13,12 +13,11 @@ a {
     @extend %default-transition;
 }
 
-
 body {
     font-family: 'LifehackBasic-Regular';
 }
 
 .icon-lady {
-  @include sprite($girl);
+    @include sprite($girl);
 }
 /*END:base*/
