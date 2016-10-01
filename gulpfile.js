@@ -64,7 +64,7 @@ gulp.task('sprite-svg:app', function(){
 	.pipe(svgSprite({
 		mode: {
     		css: {
-    		    dest: "./img/",
+    		    dest: "./",
     		    layout: "diagonal",
     		    sprite: './img/sprite.svg',
     		    bust: false,
