@@ -1,8 +1,6 @@
 /*base*/
 
 @import 'assets/settings';
-@import 'assets/sprite-png';
-@import 'assets/sprite-svg';
 @import 'assets/base-assets/header';
 @import 'assets/base-assets/footer';
 
@@ -18,7 +16,4 @@ body {
     font-family: 'LifehackBasic-Regular';
 }
 
-.icon-lady {
-    @include sprite($girl);
-}
 /*END:base*/
