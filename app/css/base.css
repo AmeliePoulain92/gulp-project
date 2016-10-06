@@ -1,12 +1,5 @@
 /*base*/
 
-a {
-    -webkit-transition: all .15s ease-in;
-    -moz-transition: all .15s ease-in;
-    -o-transition: all .15s ease-in;
-    transition: all .15s ease-in;
-}
-
 
 /*header*/
 
@@ -21,10 +14,6 @@ a {
 
 html {
     height: 100%;
-}
-
-body {
-    font-family: 'LifehackBasic-Regular';
 }
 
 

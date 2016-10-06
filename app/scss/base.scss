@@ -8,12 +8,4 @@ html {
     height: 100%;
 }
 
-a {
-    @extend %default-transition;
-}
-
-body {
-    font-family: 'LifehackBasic-Regular';
-}
-
 /*END:base*/
