@@ -11,7 +11,7 @@ MyProjects/
 ```
 2: Clone repository and enter the title of your future repository **(your-project-title)**
 ```
-git clone https://github.com/AmeliePoulain92/gulp-project __your-project-title__
+git clone https://github.com/AmeliePoulain92/gulp-project *your-project-title*
 ```
 3: Install packages
 ```
