@@ -1,4 +1,6 @@
-# Gulp-Project ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![Gulp Logo](https://worldvectorlogo.com/logos/gulp.svg "Gulp Logo")
+
+# Gulp-Project 
 ## Description
 Arthur Mirzoyan's gulp-project for the default markup website
 
