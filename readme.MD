@@ -1,4 +1,4 @@
-![Gulp Logo](https://worldvectorlogo.com/logos/gulp.svg "Gulp Logo" =100x20)
+<img src="https://worldvectorlogo.com/logos/gulp.svg" alt="Gulp Logo" width="100">
 
 # Gulp-Project 
 ## Description
