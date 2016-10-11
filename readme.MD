@@ -1,9 +1,10 @@
 # Gulp-Project
 ## Description
-Arthur Mirzoyan's gulp-project for default markup website
+Arthur Mirzoyan's gulp-project for the default markup website
 
 ## Usage
 Follow the following steps and you're never walk alone!
+
 1: Go to your projects folder
 ```
 for example MyProjects/
@@ -15,5 +16,5 @@ git clone https://github.com/AmeliePoulain92/gulp-project your-project-title
 3: Install packages
 ```
 npm install
-
+```
 
