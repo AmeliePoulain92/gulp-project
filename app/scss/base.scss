@@ -8,25 +8,5 @@ html {
     height: 100%;
 }
 
-a {
-    @extend %default-transition;
-}
-
-body {
-    background: red;
-    background: green;
-}
-
-.class {
-    display: block;
-    clear: both;
-    background-image: none;
-}
-
-
-
-    display: none;
-}
-
 
 /*END:base*/

@@ -172,13 +172,6 @@ gulp.task('fonts:dist', function(){
 });
 // =========== END:fonts:dist ================
 
-// =========== bower:dist ================
-// gulp.task('bower:dist', function(){
-// 	gulp.src('app/bower_components/**/*')
-// 	.pipe(gulp.dest('dist/bower_components/'));
-// });
-// =========== END:bower:dist ================
-
 // =========== DIST ============================================================================
 gulp.task('dist', function(){
 	gulp.start('clean:dist');
@@ -187,7 +180,7 @@ gulp.task('dist', function(){
 	gulp.start('js:dist');
 	gulp.start('img:dist');
 	gulp.start('fonts:dist');
-	// gulp.start('bower:dist');
+	gulp.start('bower:app');
 });
 // =========== END:DIST ============================================================================
 
@@ -220,26 +213,6 @@ gulp.task('sftp', function () {
 });
 // ======== END:sftp ===================
 
-
-// ======== psi ===============================
-// get the PageSpeed Insights report
-/*psi('theverge.com').then(data => {
-  console.log(data.ruleGroups.SPEED.score);
-  console.log(data.pageStats);
-});
-
-// output a formatted report to the terminal
-psi.output('theverge.com').then(() => {
-  console.log('done');
-});
-
-// Supply options to PSI and get back speed and usability scores
-psi('theverge.com', {nokey: 'true', strategy: 'mobile'}).then(data => {
-  console.log('Speed score: ' + data.ruleGroups.SPEED.score);
-  console.log('Usability score: ' + data.ruleGroups.USABILITY.score);
-});*/
-// ======== END:psi ===============================
-
 // ======== watch ===================
 gulp.task('watch', function() {
 	gulp.watch('app/scss/**/*.scss', ['scss:app']);
@@ -252,7 +225,7 @@ gulp.task('watch', function() {
 // ======== default ===================
 gulp.task(
 	'default', 
-	['html:app', 'scss:app', 'clean:dist', 'watch'], 
+	['html:app', 'scss:app', 'bower:app', 'watch'], 
 	function(){
 		gulp.start('browserSync');
 	}
