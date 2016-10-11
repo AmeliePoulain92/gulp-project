@@ -15,7 +15,6 @@ var useref = require('gulp-useref');
 var svgSprite = require("gulp-svg-sprites");
 var spritesmith = require('gulp.spritesmith');
 var wiredep = require('wiredep').stream;
-var psi = require('psi');
 var sftp = require('gulp-sftp');
 
 

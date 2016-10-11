@@ -1,2 +1,19 @@
-# gulp-project
-<p>Arthur Mirzoyan's gulp-project</p>
+# Gulp-Project
+## Description
+Arthur Mirzoyan's gulp-project for default markup website
+
+## Usage
+Follow the following steps and you're never walk alone!
+1: Go to your projects folder
+```
+for example MyProjects/
+```
+2: Clone repository and enter the title of your future repository (your-project-title)
+```
+git clone https://github.com/AmeliePoulain92/gulp-project your-project-title
+```
+3: Install packages
+```
+npm install
+
+
