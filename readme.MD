@@ -10,8 +10,8 @@ Follow the following steps and you're never walk alone!
 MyProjects/
 ```
 2: Clone repository and enter the title of your future repository **(your-project-title)**
-```
-git clone [https://github.com/AmeliePoulain92/gulp-project](https://github.com/AmeliePoulain92/gulp-project) your-project-title
+```[I'm an inline-style link](https://www.google.com)
+git clone [https://github.com/AmeliePoulain92/gulp-project] your-project-title*
 ```
 3: Install packages
 ```
