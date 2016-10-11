@@ -45,7 +45,8 @@ gulp.task('scss:app', function() {
 	.pipe(sourcemaps.write(
 		'../scss/sourcemaps'
 	))
-	.pipe(gulp.dest('app/css'));
+	.pipe(gulp.dest('app/css'))
+	.pipe(bsReload({stream:true}));
 });
 // =========== END:scss:app ================
 
@@ -94,7 +95,7 @@ gulp.task('sprite-png:app', function(){
 gulp.task('bower:app', function () {
     gulp.src('app/template-modules/template-assets/**/*.html')
       .pipe(wiredep({
-        'ignorePath': '../',
+        'ignorePath': '../../',
         directory : "app/bower_components",
         packages:
           {
@@ -172,10 +173,10 @@ gulp.task('fonts:dist', function(){
 // =========== END:fonts:dist ================
 
 // =========== bower:dist ================
-gulp.task('bower:dist', function(){
-	gulp.src('app/bower_components/**/*')
-	.pipe(gulp.dest('dist/bower_components/'));
-});
+// gulp.task('bower:dist', function(){
+// 	gulp.src('app/bower_components/**/*')
+// 	.pipe(gulp.dest('dist/bower_components/'));
+// });
 // =========== END:bower:dist ================
 
 // =========== DIST ============================================================================
@@ -186,7 +187,7 @@ gulp.task('dist', function(){
 	gulp.start('js:dist');
 	gulp.start('img:dist');
 	gulp.start('fonts:dist');
-	gulp.start('bower:dist');
+	// gulp.start('bower:dist');
 });
 // =========== END:DIST ============================================================================
 
