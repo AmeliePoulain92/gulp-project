@@ -17,6 +17,6 @@ git clone https://github.com/AmeliePoulain92/gulp-project <strong>your-project-t
 ```
 3: Install packages
 ```
-npm install
+npm install 
 ```
 
