@@ -9,6 +9,8 @@ Follow the following steps and you're never walk alone!
 ```
 MyProjects/
 ```
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
 2: Clone repository and enter the title of your future repository **(your-project-title)**
 ```
 git clone https://github.com/AmeliePoulain92/gulp-project your-project-title
