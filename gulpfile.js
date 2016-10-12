@@ -21,10 +21,17 @@ var sftp = require('gulp-sftp');
 // ======== APP ==========================================================================================================
 
 // =========== html:app ================
+gulp.task('rigger:app', function(){
+	return gulp.src('app/template-modules/*.html')
+	.pipe(rigger())
+	.pipe(gulp.dest('app/'))
+});
+// =========== END:html:app ================
+
+// =========== html:app ================
 gulp.task('html:app', function(){
 	return gulp.src('app/template-modules/*.html')
 	.pipe(rigger())
-	.pipe(prettify())
 	.pipe(gulp.dest('app/'))
 	.pipe(bsReload({stream:true}));
 });
@@ -224,7 +231,7 @@ gulp.task('watch', function() {
 // ======== default ===================
 gulp.task(
 	'default', 
-	['html:app', 'scss:app', 'bower:app', 'watch'], 
+	['bower:app', 'scss:app', 'rigger:app', 'watch'], 
 	function(){
 		gulp.start('browserSync');
 	}
