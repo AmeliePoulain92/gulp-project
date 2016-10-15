@@ -39,7 +39,7 @@ gulp.task('html:app', function(){
 
 // =========== scss:app ================
 gulp.task('scss:app', function() {
-	return gulp.src('app/scss/**/*.scss')
+	return gulp.src('app/scss/*.scss')
 	.pipe(sourcemaps.init())
 	.pipe(sass().on('error', sass.logError))
 	.pipe(autoprefixer({
