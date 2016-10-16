@@ -179,8 +179,7 @@ gulp.task('fonts:dist', function(){
 // =========== END:fonts:dist ================
 
 // =========== DIST ============================================================================
-gulp.task('dist', function(){
-	gulp.start('clean:dist');
+gulp.task('dist', ['clean:dist'], function(){
 	gulp.start('html:dist');
 	gulp.start('css:dist');
 	gulp.start('js:dist');
