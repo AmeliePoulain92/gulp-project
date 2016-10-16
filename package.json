@@ -33,7 +33,4 @@
     "gulp.spritesmith": "^6.2.1",
     "wiredep": "^4.0.0"
   },
-  "dependencies": {
-    "psi": "^2.0.4"
-  }
 }

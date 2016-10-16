@@ -15,17 +15,23 @@ var useref = require('gulp-useref');
 var svgSprite = require("gulp-svg-sprites");
 var spritesmith = require('gulp.spritesmith');
 var wiredep = require('wiredep').stream;
-var psi = require('psi');
 var sftp = require('gulp-sftp');
 
 
 // ======== APP ==========================================================================================================
 
 // =========== html:app ================
+gulp.task('rigger:app', function(){
+	return gulp.src('app/template-modules/*.html')
+	.pipe(rigger())
+	.pipe(gulp.dest('app/'))
+});
+// =========== END:html:app ================
+
+// =========== html:app ================
 gulp.task('html:app', function(){
 	return gulp.src('app/template-modules/*.html')
 	.pipe(rigger())
-	.pipe(prettify())
 	.pipe(gulp.dest('app/'))
 	.pipe(bsReload({stream:true}));
 });
@@ -45,7 +51,8 @@ gulp.task('scss:app', function() {
 	.pipe(sourcemaps.write(
 		'../scss/sourcemaps'
 	))
-	.pipe(gulp.dest('app/css'));
+	.pipe(gulp.dest('app/css'))
+	.pipe(bsReload({stream:true}));
 });
 // =========== END:scss:app ================
 
@@ -91,10 +98,10 @@ gulp.task('sprite-png:app', function(){
 // =========== END:sprite-png:app ================
 
 // ===========:bower:app ================
-gulp.task('bower', function () {
+gulp.task('bower:app', function () {
     gulp.src('app/template-modules/template-assets/**/*.html')
       .pipe(wiredep({
-        'ignorePath': '../',
+        'ignorePath': '../../',
         directory : "app/bower_components",
         packages:
           {
@@ -179,6 +186,7 @@ gulp.task('dist', function(){
 	gulp.start('js:dist');
 	gulp.start('img:dist');
 	gulp.start('fonts:dist');
+	gulp.start('bower:app');
 });
 // =========== END:DIST ============================================================================
 
@@ -211,39 +219,19 @@ gulp.task('sftp', function () {
 });
 // ======== END:sftp ===================
 
-
-// ======== psi ===============================
-// get the PageSpeed Insights report
-/*psi('theverge.com').then(data => {
-  console.log(data.ruleGroups.SPEED.score);
-  console.log(data.pageStats);
-});
-
-// output a formatted report to the terminal
-psi.output('theverge.com').then(() => {
-  console.log('done');
-});
-
-// Supply options to PSI and get back speed and usability scores
-psi('theverge.com', {nokey: 'true', strategy: 'mobile'}).then(data => {
-  console.log('Speed score: ' + data.ruleGroups.SPEED.score);
-  console.log('Usability score: ' + data.ruleGroups.USABILITY.score);
-});*/
-// ======== END:psi ===============================
-
 // ======== watch ===================
 gulp.task('watch', function() {
 	gulp.watch('app/scss/**/*.scss', ['scss:app']);
 	gulp.watch(['app/template-modules/**/*.html'],['html:app']);
 	gulp.watch('app/js/**/*.js', ['js:app']);
-	gulp.watch(['bower.json'],['bower']);
+	gulp.watch(['bower.json'],['bower:app']);
 });
 // ======== END:watch ===================
 
 // ======== default ===================
 gulp.task(
 	'default', 
-	['html:app', 'scss:app', 'clean:dist', 'watch'], 
+	['bower:app', 'scss:app', 'rigger:app', 'watch'], 
 	function(){
 		gulp.start('browserSync');
 	}

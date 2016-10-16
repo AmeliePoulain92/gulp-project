@@ -67,6 +67,14 @@
     background: rgba(0, 0, 0, 0.7) none repeat scroll 0% 0%;
 }
 
+%table-display-block {
+    display: block;
+    float: left;
+    clear: left;
+    width: 100%;
+    height: auto;
+}
+
 
 %grayscale {
     filter: url('data:image/svg+xml;utf8,<svg%20xmlns=\'http://www.w3.org/2000/svg\'><filter%…200.3333%200.3333%200%200%200%200%200%201%200\'/></filter></svg>#grayscale');
