@@ -32,5 +32,5 @@
     "gulp-useref": "^3.1.0",
     "gulp.spritesmith": "^6.2.1",
     "wiredep": "^4.0.0"
-  },
+  }
 }
