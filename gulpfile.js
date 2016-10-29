@@ -158,10 +158,12 @@ gulp.task('js:dist', function(){
 gulp.task('jsUglify:dist', function(){
 	return gulp.src('dist/js/**/*.js')
 	.pipe(uglify({
-		mangle: false
+		mangle: false,
+		preserveComments: 'all'
 	}))
 	.pipe(gulp.dest('dist/js'));
 });
+
 // =========== END:js:dist ================
 
 // =========== img:dist ================
@@ -230,7 +232,7 @@ gulp.task('watch', function() {
 // ======== default ===================
 gulp.task(
 	'default', 
-	['bower:app', 'scss:app', 'rigger:app', 'watch'], 
+	['bower:app', 'scss:app', 'js:app', 'rigger:app', 'watch'], 
 	function(){
 		gulp.start('browserSync');
 	}
