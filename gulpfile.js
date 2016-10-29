@@ -155,11 +155,11 @@ gulp.task('js:dist', function(){
 	.pipe(gulp.dest('dist/js'));
 });
 
+
 gulp.task('jsUglify:dist', function(){
 	return gulp.src('dist/js/**/*.js')
 	.pipe(uglify({
-		mangle: false,
-		preserveComments: 'all'
+		mangle: false
 	}))
 	.pipe(gulp.dest('dist/js'));
 });
