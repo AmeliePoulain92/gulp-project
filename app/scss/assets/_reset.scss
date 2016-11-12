@@ -185,6 +185,7 @@ img {
     outline: none;
 }
 
+
 input[type='search']::-webkit-search-decoration,
 input[type='search']::-webkit-search-cancel-button,
 input[type='search']::-webkit-search-results-button,
@@ -231,6 +232,15 @@ strong {
 label,
 button {
     cursor: pointer;
+}
+
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+sub { 
+  top: 0.4em; 
 }
 
 table {
