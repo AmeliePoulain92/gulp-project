@@ -4,8 +4,22 @@
 @import 'assets/base-assets/header';
 @import 'assets/base-assets/footer';
 
-html {
+html,
+body {
     height: 100%;
+}
+
+.wrapper {
+    display: table;
+    width: 100%;
+    height: 100%;
+    table-layout: fixed;
+}
+
+.main {
+    display: table-row;
+    height: 100%;
+    height: 1px;
 }
 
 .clearfix {
