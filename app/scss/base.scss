@@ -8,4 +8,24 @@ html {
     height: 100%;
 }
 
+.clearfix {
+    &:after {
+        display: block;
+        clear: both;
+        content: '';
+    }
+}
+
+.transition {
+    transition: all 0.15s ease-in;
+}
+
+.myContainer {
+    position: relative;
+    max-width: gridValue('container');
+    margin: 0 auto;
+
+    @extend .clearfix;
+}
+
 /*END:base*/

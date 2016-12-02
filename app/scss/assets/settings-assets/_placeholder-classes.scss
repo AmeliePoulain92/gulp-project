@@ -2,10 +2,6 @@
     transition: all 0.15s ease-in;
 }
 
-%list-style-none {
-    list-style: none;
-}
-
 %clearfix {
     &:after {
         display: block;
@@ -18,27 +14,6 @@
     display: block;
     max-width: 100%;
     height: auto;
-}
-
-%absolute-whole-block {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-%translate-center-x {
-    transform: translateX(-50%);
-}
-
-%translate-center-y {
-    transform: translateY(-50%);
-}
-
-%translate-center-xy {
-    transform: translate(-50%, -50%);
 }
 
 %placeholder-style {
@@ -66,15 +41,6 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.7) none repeat scroll 0% 0%;
 }
-
-%table-display-block {
-    display: block;
-    float: left;
-    clear: left;
-    width: 100%;
-    height: auto;
-}
-
 
 %grayscale {
     filter: url('data:image/svg+xml;utf8,<svg%20xmlns=\'http://www.w3.org/2000/svg\'><filter%…200.3333%200.3333%200%200%200%200%200%201%200\'/></filter></svg>#grayscale');
