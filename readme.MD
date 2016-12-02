@@ -19,4 +19,8 @@ git clone https://github.com/AmeliePoulain92/gulp-project your-project-title
 ```
 npm install 
 ```
+4: Run Gulp in console
+```
+gulp  
+```
 
