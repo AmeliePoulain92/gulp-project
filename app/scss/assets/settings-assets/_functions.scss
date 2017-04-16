@@ -1,0 +1,7 @@
+@mixin headerIsFixed($isHeaderFixed) {
+    @if($isHeaderFixed) {
+        .site-header {
+            top: 32px;
+        }
+    }
+}
