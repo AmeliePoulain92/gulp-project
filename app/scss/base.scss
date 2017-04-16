@@ -10,6 +10,8 @@ body {
 }
 
 body {
+    background: url('https://media.giphy.com/media/11RwocOdukxqN2/giphy.gif') center center/75vw 75vh no-repeat;
+
     @include headerIsFixed(false);
 }
 
