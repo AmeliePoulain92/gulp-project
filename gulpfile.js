@@ -75,7 +75,7 @@ gulp.task('sprite-svg:app', function(){
 		},
 		svgPath: '../img/sprite.svg',
     	cssFile: '../../app/scss/assets/_sprite-svg.scss',
-    	tepmlates: {
+    	templates: {
 	    	scss: true
 	    },
 	}))
