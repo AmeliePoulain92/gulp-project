@@ -2,7 +2,15 @@
 
 /*fonts*/
 
-// @include font-face('LifehackBasic', 'Regular');
+/* According to include your custom fonts into the project,
+	please follow these rules: 
+
+	1. Create a folder with the font-family in your fonts/ folter for Example - LifehackBasic
+	2. Create a subfolder for Font type with the hyphen sign in your LifehackBasic/ folder for Example LifehackBasic-Regular
+	3. So, Add a new folder with FontFamily-FontType syntax and upload your fonts and named files as the FontType/ folder + file expansion for Example path will be: ../fonts/LifehackBasic/LifehackBasic-Regular/LifehackBasic-Regular.eot
+	4. Include fonts like this, so, FontFamily and FontType: @include font-face('LifehackBasic', 'Regular');
+	5. Please, feel free to clear this comment after successfully understanding the rules. Please, enjoy! :) 
+ */
 
 /*END:fonts*/
 
